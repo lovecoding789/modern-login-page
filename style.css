@@ -1,0 +1,434 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #141e30, #243b55);
+    position: relative;
+}
+
+/* Animated Background Circles */
+body::before,
+body::after {
+    content: '';
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 198, 255, 0.3);
+
+    filter: blur(80px);
+
+    animation: float 6s infinite alternate;
+}
+
+body::before {
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 3s;
+}
+
+/* Floating Animation */
+@keyframes float {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(30px);
+    }
+}
+
+/* Container */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Box */
+.login-box {
+    width: 350px;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    color: white;
+
+    animation: fadeIn 1s ease;
+
+    position: relatives;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.login-box p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #d1d1d1;
+}
+
+/* Inputs */
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+/* Input Hover/Focus */
+.input-box input:focus {
+    background: rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.6);
+}
+
+/* Placeholder */
+.input-box input::placeholder {
+    color: #e0e0e0;
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.options a {
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.options a:hover {
+    color: #00c6ff;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Button Hover */
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0, 114, 255, 0.4);
+}
+
+/* Register */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design for all devices */
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .login-box {
+        width: 85%;
+        padding: 35px;
+    }
+
+    .login-box h2 {
+        font-size: 28px;
+    }
+
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .login-box {
+        width: 100%;
+        padding: 30px 25px;
+        border-radius: 18px;
+    }
+
+    .login-box h2 {
+        font-size: 26px;
+    }
+
+    .login-box p {
+        font-size: 14px;
+    }
+
+    /* Inputs */
+    .input-box input {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    /* Button */
+    button {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    /* Options Row */
+    .options {
+        flex-direction: column;
+        gap: 10px;
+
+        align-items: flex-start;
+
+        font-size: 13px;
+    }
+
+    /* Social Buttons */
+    .social-icons {
+        gap: 12px;
+    }
+
+    .social-icons a {
+        width: 42px;
+        height: 42px;
+
+        font-size: 16px;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+
+        font-size: 18px;
+    }
+
+}
+
+/* Small Phones */
+@media (max-width: 350px) {
+
+    .login-box {
+        padding: 25px 18px;
+    }
+
+    .login-box h2 {
+        font-size: 22px;
+    }
+
+    .input-box input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+}
+
+/* Social Login */
+.social-login {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.social-login p {
+    margin-bottom: 15px;
+    color: #dcdcdc;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Icon Buttons */
+.social-icons a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.social-icons a:hover {
+    transform: translateY(-5px);
+
+    background: #00c6ff;
+
+    box-shadow: 0 5px 15px rgba(0, 198, 255, 0.5);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+/* Light Mode */
+body.light-mode {
+    background: linear-gradient(to right, #dfe9f3, #ffffff);
+}
+
+/* Light Login Box */
+body.light-mode .login-box {
+    background: rgba(255, 255, 255, 0.7);
+
+    color: #222;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs */
+body.light-mode .input-box input {
+    background: rgba(0, 0, 0, 0.05);
+
+    color: #222;
+}
+
+/* Labels */
+body.light-mode .input-box label {
+    color: #555;
+}
+
+/* Options Text */
+body.light-mode .options,
+body.light-mode .register-link,
+body.light-mode .social-login p {
+    color: #333;
+}
+
+/* Links */
+body.light-mode a {
+    color: #0072ff;
+}
+
+/* Social Icons */
+body.light-mode .social-icons a {
+    background: rgba(0, 0, 0, 0.08);
+
+    color: #222;
+}
